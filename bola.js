@@ -5,7 +5,7 @@ const Kitchen = [
       {
         Price: "$25",
         Quantity: "2",
-        Location: "Chinese",
+        Location: "Japan",
         Total: "$50",
         Status: "",
       },
