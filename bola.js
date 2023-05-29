@@ -14,7 +14,7 @@ const Kitchen = [
   {
     Foodname: "Doughnut & Ice-cream",
     all: [
-      { Price: "$15", Quantity: "2", Location: "UK", Total: "$25", Status: "" },
+      { Price: "$15", Quantity: "2", Location: "USA", Total: "$25", Status: "" },
     ],
   },
   {
