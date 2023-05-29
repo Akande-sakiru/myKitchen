@@ -1,6 +1,6 @@
 const Kitchen = [
   {
-    Foodname: "Chinese Rice",
+    Foodname: "Chinese ",
     all: [
       {
         Price: "$25",
