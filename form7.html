@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="box">
+        <div class="form">
+            <h2>Welcome Back</h2>
+            <div class="inputbox">
+                <input type="text" id="email" required="required">
+                <span>Email</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" id="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="#">Forget Password</a>
+                <a href="form.html">Sign Up</a>
+            </div>
+            <input type="submit" onclick="SubmitLogin()" value="Login">
+        </div>
+    </div>
+    <script>
+        function SubmitLogin(){
+    var password =document.getElementById('password').value
+    var email =document.getElementById('email').value
+
+    var loginData = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    }
+
+    let usersData = JSON.parse(localStorage.getItem('users'))
+    let obj = {}
+    let loginStatus = false
+
+    usersData.some(item=>{
+        if(item.email==loginData.email && item.pass == loginData.password){
+            localStorage.setItem("authUser", JSON.stringify(item))
+            loginStatus = true
+            obj = item
+        }
+    })
+
+    if(loginStatus){
+        window.location.assign('myKitchen.html')
+    } else{
+        alert('you have no account with us. Kindly sign up')
+        window.location.assign('form.html')
+    }
+}
+
+    </script>
+</body>
+</html>
